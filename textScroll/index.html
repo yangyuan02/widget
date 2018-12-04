@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1, minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui">
+    <link rel="stylesheet" href = "textScroll.css"/>
+  </head>
+  <body>
+    <div class = "textScroll">
+      <ul class="ts-list" id = "textScroll">
+        <li class="ts-item show-dots">
+          <span class="font-s">回家过年停了大半个月车，用之前先检查这些</span>
+        </li>
+        <li class="ts-item show-dots">
+          <span class="font-s">超12年驾龄老司机亲述：这么多年我可能都只做了“假”保养！</span>
+        </li>
+        <li class="ts-item show-dots">
+          <span class="font-s">【火爆】探秘北极圈自驾之旅，极光年必选项</span>
+        </li>
+      </ul>
+    </div>
+    <script type = "text/javascript" src = "textScroll.js"></script>
+    <script type = "text/javascript">
+      var textScroll = new TextScroll({
+        ele: 'textScroll',
+        autoTime: 3000
+      })
+      textScroll.showText();
+    </script>
+  </body>
+</html>

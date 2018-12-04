@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1, minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui">
+    <title></title>
+<style>
+  body{
+    height: 100%;
+    margin: 0 auto;
+    min-width: 320px;
+    max-width: 540px;
+    position: relative;
+    overflow: hidden;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    color: #333;
+    font-size: .14rem;
+    background: #f4f4f8;
+    font-family: Arial,"Lucida Grande",Verdana,"Microsoft Yahei",STXihei,Sans-serif;
+    -webkit-user-select: none;
+    user-select: none;
+  }
+  html{
+    height:100%;
+  }
+  header{
+    width:100%;
+  }
+  .page {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    bottom: 0;
+    background: #f4f4f8;
+    overflow: hidden
+  }
+  .ui-calendar-wrap {
+      background-color: #fff;
+      overflow: auto;
+      margin-top:30px;
+  }
+  html{
+    font-size:100px;
+  }
+  #main{
+    position: relative;
+    overflow:hidden;
+    flex:1;
+  }
+  .page-content {
+    height: 100%;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  .ui-calendar-item {
+      width: 100%
+  }
+
+  .ui-calendar-placeholder {
+      height: 0.3rem
+  }
+
+  .ui-calendar-title {
+      padding: .1rem 0 .08rem;
+      font-size: .18rem;
+      color: #787781;
+      text-align: center
+  }
+
+  .ui-week-wrap {
+      width: 100%;
+      font-size: .15rem;
+      color: #b7bdc9;
+      font-weight: 400;
+      text-align: center;
+      background-color: #f8f8f8;
+      padding: .047rem 0
+  }
+
+  .ui-calendar-item td {
+      padding: .05rem 0;
+      text-align: center
+  }
+
+  .ui-calendar-item td span {
+      display: inline-block;
+      width: .38rem;
+      height: .38rem;
+      border-radius: 50%;
+      text-align: center;
+      line-height: .36rem;
+      font-size: .18rem;
+      overflow: hidden
+  }
+
+  .ui-calendar-item td.day2 span,.ui-calendar-item td.day3 span {
+      color: #32c8fa;
+      font-size: .15rem
+  }
+
+  .ui-calendar-item td.gray span {
+      color: #ccc
+  }
+
+  .ui-calendar-item td.current span {
+      color: #fff;
+      background-color: #32c8fa
+  }
+  .ui-calendar-title {
+    padding: .1rem 0 .08rem 0;
+    font-size: .18rem;
+    color: #787781;
+    text-align: center;
+  }
+  .ui-header {
+    background-color: #fff;
+    position: relative;
+    z-index: 400;
+    text-align: center;
+    width:100%;
+    overflow: hidden;
+    height: 44px;
+    border-bottom: 1px #eee solid;
+  }
+  .ui-header-inner {
+    height: 44px;
+    line-height: 44px;
+    width: 100%;
+    position: absolute;
+    top:0;
+  }
+  .ui-header-title {
+    position: absolute;
+    left: 85px;
+    right: 85px;
+    font-size: 18px;
+    color: #333;
+    font-weight: 500;
+    z-index: -1;
+  }
+  .page-top,
+  .page-bottom {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    z-index:5;
+  }
+  .page-top {
+    top: 0;
+  }
+  .ui-week-wrap {
+    width: 100%;
+    font-size: .15rem;
+    color: #b7bdc9;
+    font-weight: normal;
+    text-align: center;
+    background-color: #f8f8f8;
+  }
+  .flex-wrap {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+  }
+  .flex {
+    width: 100%;
+    -webkit-box-flex: 1;
+    -webkit-flex:  1;
+    flex:  1;
+  }
+</style>
+  </head>
+  <body>
+
+      <div class="ui-header">
+        <div class="ui-header-inner">
+         <span class="ui-header-title  show-dots">日历</span>
+        </div>
+      </div>
+    <div id = "main">
+      <div class="page">
+        <div style="height:100%">
+        <header class="page-top">
+          <div class="flex-wrap ui-week-wrap">
+              <div class="flex">日</div>
+              <div class="flex">一</div>
+              <div class="flex">二</div>
+              <div class="flex">三</div>
+              <div class="flex">四</div>
+              <div class="flex">五</div>
+              <div class="flex">六</div>
+           </div>
+        </header>
+
+        <div class = "page-content">
+          <div class = "ui-calendar-wrap" id = "calc">
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+  </body>
+<script src = "calendar.js"></script>
+<script>
+  var calendar = new Calendar({
+    monthsNum: 3
+  })
+  calendar.showCaclendar();
+
+</script>
+
+</html>

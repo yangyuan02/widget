@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+      <meta name="viewport" content="width=device-width,initial-scale=1, minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui">
+    <link rel = "stylesheet" href = "dialog.css"/>
+  </head>
+  <body>
+    <div id = "btn" style="width:100px;height:100px;background:#f5f5f5;line-height:100px;text-align:center;color:#333;">显示</div>
+    <div class="dialog" id="dialog">
+      <div class="weui-mask"></div>
+      <div class="weui-dialog">
+        <div class="weui-dialog__hd">
+          <strong class="weui-dialog__title" id = "dialog-title"></strong>
+        </div>
+        <div class="weui-dialog__bd" id = "dialog-content"></div>
+        <div class="weui-dialog__ft">
+          <span id = "dialog-cancel" class="weui-dialog__btn weui-dialog__btn_default">取消</span>
+          <span id = "dialog-confirm" class="weui-dialog__btn weui-dialog__btn_primary">确认</span>
+        </div>
+      </div>
+    </div>
+    <script type = "text/javascript" src = "dialog.js"></script>
+    <script>
+      var oBtn = document.getElementById('btn');
+      oBtn.addEventListener('click',function(){
+        var dialog = new Dialog({
+          ele: 'dialog',
+          title: '弹窗标题',
+          content: '弹窗内容，告知当前状态、信息和解决方法，描述文字尽量控制在三行内',
+          confirm () {
+            console.log('confirm');
+          }
+        })
+        dialog.showDialog();
+      })
+    </script>
+  </body>
+</html>
